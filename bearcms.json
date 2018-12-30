@@ -1,0 +1,17 @@
+{
+    "id": "bearcms/share-button-element-addon",
+    "name": "Share button element",
+    "description": "Enable support for share buttons in your website. Adding such elements to your website helps your visitors easily promote your content. A total share count (includes Facebook and LinkedIn) is available too.",
+    "author": {
+        "name": "Bear CMS",
+        "email": "support@bearcms.com",
+        "url": "https://bearcms.com/"
+    },
+    "media": [
+        {
+            "filename": "/assets/1.png",
+            "width": 1890,
+            "height": 1404
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "name": "bearcms/share-button-element-addon",
+    "description": "Share button element for Bear CMS",
+    "keywords": ["share button", "element", "Bear CMS"],
+    "homepage": "https://github.com/bearcms/share-button-element-addon",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bear CMS",
+            "email": "support@bearcms.com",
+            "homepage": "https://bearcms.com/"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "bearcms/bearframework-addon": "^0.6.2",
+        "ivopetkov/social-sharing-bearframework-addon": "0.1.*"
+    },
+    "autoload": {
+        "files": ["autoload.php"]
+    }
+}
