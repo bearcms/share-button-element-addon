@@ -14,7 +14,8 @@
     "require": {
         "php": ">=7.1",
         "bearcms/bearframework-addon": "^0.6.2",
-        "ivopetkov/social-sharing-bearframework-addon": "0.1.*"
+        "ivopetkov/social-sharing-bearframework-addon": "0.1.*",
+        "bearframework/localization-addon": "0.2.*"
     },
     "autoload": {
         "files": ["autoload.php"]

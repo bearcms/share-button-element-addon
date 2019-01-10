@@ -10,6 +10,7 @@
 BearFramework\Addons::register('bearcms/share-button-element-addon', __DIR__, [
     'require' => [
         'bearcms/bearframework-addon',
-        'ivopetkov/social-sharing-bearframework-addon'
+        'ivopetkov/social-sharing-bearframework-addon',
+        'bearframework/localization-addon'
     ]
 ]);
