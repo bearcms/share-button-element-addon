@@ -12,9 +12,9 @@ use BearFramework\App;
 $app = App::get();
 
 $app->bearCMS->addons
-        ->announce('bearcms/share-button-element-addon', function(\BearCMS\Addons\Addon $addon) use ($app) {
+        ->register('bearcms/share-button-element-addon', function(\BearCMS\Addons\Addon $addon) use ($app) {
             $addon->initialize = function() use ($app) {
-                $context = $app->context->get(__FILE__);
+                $context = $app->contexts->get(__FILE__);
 
                 $context->assets->addDir('assets');
 
