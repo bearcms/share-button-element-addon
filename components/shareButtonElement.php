@@ -3,7 +3,6 @@
 use BearFramework\App;
 
 $app = App::get();
-$context = $app->contexts->get(__DIR__);
 
 $url = (string) $component->url;
 if ($url === 'home') {
