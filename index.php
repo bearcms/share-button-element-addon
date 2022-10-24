@@ -37,19 +37,21 @@ $app->bearCMS->addons
                 ]
             ]);
 
-            \BearCMS\Internal\Themes::$elementsOptions['shareButton'] = function ($context, $idPrefix, $parentSelector) {
-                $group = $context->addGroup(__('bearcms/share-button-element-addon/Share button'));
+            \BearCMS\Internal\Themes::$elementsOptions['shareButton'] = function ($options, $idPrefix, $parentSelector, $context, $details) {
+                $group = $options->addGroup(__('bearcms/share-button-element-addon/Share button'));
                 $group->addOption($idPrefix . "ShareButtonCSS", "css", '', [
+                    "cssOptions" => isset($details['cssOptions']) ? $details['cssOptions'] : [],
                     "cssOutput" => [
                         ["rule", $parentSelector . " .bearcms-share-button-element-button", "box-sizing:border-box;cursor:pointer;display:inline-block;text-decoration:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%;"],
                         ["selector", $parentSelector . " .bearcms-share-button-element-button"]
                     ],
-                    "value" => '{"background-color":"#3374ce","border-top":"1px solid #3169c4","border-right":"1px solid #3169c4","border-bottom":"1px solid #3169c4","border-left":"1px solid #3169c4","font-size":"12px","font-family":"Arial","font-weight":"bold","height":"33px","line-height":"32px","padding-left":"10px","padding-right":"10px","color":"#ffffff","border-top-left-radius":"2px","border-top-right-radius":"2px","border-bottom-left-radius":"2px","border-bottom-right-radius":"2px"}'
+                    "defaultValue" => '{"background-color":"#3374ce","border-top":"1px solid #3169c4","border-right":"1px solid #3169c4","border-bottom":"1px solid #3169c4","border-left":"1px solid #3169c4","font-size":"12px","font-family":"Arial","font-weight":"bold","height":"33px","line-height":"32px","padding-left":"10px","padding-right":"10px","color":"#ffffff","border-top-left-radius":"2px","border-top-right-radius":"2px","border-bottom-left-radius":"2px","border-bottom-right-radius":"2px"}'
                 ]);
 
                 $groupContainer = $group->addGroup(__("bearcms/share-button-element-addon/Container"));
                 $groupContainer->addOption($idPrefix . "ShareButtonContainerCSS", "css", '', [
                     "cssTypes" => ["cssPadding", "cssMargin", "cssBorder", "cssRadius", "cssShadow", "cssBackground", "cssSize", "cssTextAlign"],
+                    "cssOptions" => isset($details['cssOptions']) ? $details['cssOptions'] : [],
                     "cssOutput" => [
                         ["rule", $parentSelector . " .bearcms-share-button-element", "box-sizing:border-box;"],
                         ["selector", $parentSelector . " .bearcms-share-button-element"]
