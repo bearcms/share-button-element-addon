@@ -51,7 +51,7 @@ $app->bearCMS->addons
                 $groupContainer = $group->addGroup(__("bearcms/share-button-element-addon/Container"));
                 $groupContainer->addOption($idPrefix . "ShareButtonContainerCSS", "css", '', [
                     "cssTypes" => ["cssPadding", "cssMargin", "cssBorder", "cssRadius", "cssShadow", "cssBackground", "cssSize", "cssTextAlign"],
-                    "cssOptions" => isset($details['cssOptions']) ? $details['cssOptions'] : [],
+                    "cssOptions" => array_diff(isset($details['cssOptions']) ? $details['cssOptions'] : [], ["*/focusState"]),
                     "cssOutput" => [
                         ["rule", $parentSelector . " .bearcms-share-button-element", "box-sizing:border-box;"],
                         ["selector", $parentSelector . " .bearcms-share-button-element"]
