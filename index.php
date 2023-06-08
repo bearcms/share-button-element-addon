@@ -26,16 +26,14 @@ $app->bearCMS->addons
                     return include $context->dir . '/locales/bg.php';
                 });
 
-            \BearCMS\Internal\ElementsTypes::add('shareButton', [
-                'componentSrc' => 'bearcms-share-button-element',
-                'componentFilename' => $context->dir . '/components/shareButtonElement.php',
-                'fields' => [
-                    [
-                        'id' => 'url',
-                        'type' => 'textbox'
-                    ]
+            $type = new \BearCMS\Internal\ElementType('shareButton', 'bearcms-share-button-element', $context->dir . '/components/shareButtonElement.php');
+            $type->properties = [
+                [
+                    'id' => 'url',
+                    'type' => 'string'
                 ]
-            ]);
+            ];
+            \BearCMS\Internal\ElementsTypes::add($type);
 
             \BearCMS\Internal\Themes::$elementsOptions['shareButton'] = function ($options, $idPrefix, $parentSelector, $context, $details) {
                 $group = $options->addGroup(__('bearcms/share-button-element-addon/Share button'));
