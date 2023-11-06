@@ -33,6 +33,7 @@ $app->bearCMS->addons
                     'type' => 'string'
                 ]
             ];
+            $type->canImportExport = true;
             \BearCMS\Internal\ElementsTypes::add($type);
 
             \BearCMS\Internal\Themes::$elementsOptions['shareButton'] = function ($options, $idPrefix, $parentSelector, $context, $details) {
