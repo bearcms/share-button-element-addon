@@ -52,7 +52,7 @@ $app->bearCMS->addons
                     "cssTypes" => ["cssPadding", "cssMargin", "cssBorder", "cssRadius", "cssShadow", "cssBackground", "cssSize", "cssTextAlign"],
                     "cssOptions" => array_diff(isset($details['cssOptions']) ? $details['cssOptions'] : [], ["*/focusState"]),
                     "cssOutput" => [
-                        ["rule", $parentSelector . " .bearcms-share-button-element", "box-sizing:border-box;"],
+                        ["rule", $parentSelector . " .bearcms-share-button-element", "box-sizing:border-box;display:flex;"],
                         ["selector", $parentSelector . " .bearcms-share-button-element"]
                     ]
                 ]);
