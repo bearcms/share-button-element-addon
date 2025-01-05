@@ -12,8 +12,8 @@ use BearFramework\App;
 $app = App::get();
 
 $app->bearCMS->addons
-    ->register('bearcms/share-button-element-addon', function (\BearCMS\Addons\Addon $addon) use ($app) {
-        $addon->initialize = function () use ($app) {
+    ->register('bearcms/share-button-element-addon', function (\BearCMS\Addons\Addon $addon) use ($app): void {
+        $addon->initialize = function () use ($app): void {
             $context = $app->contexts->get(__DIR__);
 
             $context->assets->addDir('assets');
@@ -37,7 +37,7 @@ $app->bearCMS->addons
             $type->canImportExport = true;
             \BearCMS\Internal\ElementsTypes::add($type);
 
-            \BearCMS\Internal\Themes::$elementsOptions['shareButton'] = ['v1', function ($options, $idPrefix, $parentSelector, $context, $details) {
+            \BearCMS\Internal\Themes::$elementsOptions['shareButton'] = ['v1', function ($options, $idPrefix, $parentSelector, $context, $details): void {
                 $isElementContext = $context === \BearCMS\Internal\Themes::OPTIONS_CONTEXT_ELEMENT;
                 if ($isElementContext) {
                     $optionsGroup = $options;
